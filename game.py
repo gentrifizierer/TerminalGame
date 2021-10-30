@@ -1,5 +1,5 @@
 # This is my first completely self-written piece of code, so please be gentle on me
-
+import sys, time, random
 # player inititalization
 class Player:
     def __init__(self, name, powers, inventory):
@@ -13,17 +13,28 @@ class Player:
     def __sub__(self, item, amount):
         self.inventory[item] -= amount
 
-player = Player(input("Hey there, how may I call you?\n"), [], {})
+import sys,time,random
+
+def sltype(t, s = 500):
+    #typing_speed = 2500
+    for l in t:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        #time.sleep(random.random()*10.0/s)
+    return ''
+
+player = Player(input(sltype("Hey there, how may I call you?\n")), [], {})
 
 # interface
-print("\nHey {name}, welcome to our little adventure.\nThroughout the game, you will be making decisions and the game will adapt accordingly.\nHere is an example:\n".format(name = player.name))
-
+sltype("\nHey {name}, welcome to our little adventure.\nThroughout the game, you will be making decisions and the game will adapt accordingly.\nHere is an example:\n".format(name = player.name))
+time.sleep(1)
 # first user input test
-test = input("Dogs or cats?\n")
+test = input("\nDogs or cats?\n")
+time.sleep(1)
 dogs = "dogs"
 cats = "cats"
 if (dogs or dogs.upper() or dogs.title()) in test:
-    print("""
+    sltype("""
                                 ..,,,,,,,,,..
                      .,;%%%%%%%%%%%%%%%%%%%%;,.
                    %%%%%%%%%%%%%%%%%%%%////%%%%%%, .,;%%;,
@@ -55,7 +66,7 @@ if (dogs or dogs.upper() or dogs.title()) in test:
 
                             WOOF!
 
-    """)
+    """, 2500)
 elif (cats or cats.upper() or cats.title()) in test:
     print("""
     		M.					   .:M
