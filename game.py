@@ -20,13 +20,13 @@ def sltype(t, s = 500):
     for l in t:
         sys.stdout.write(l)
         sys.stdout.flush()
-        #time.sleep(random.random()*10.0/s)
+        time.sleep(random.random()*10.0/s)
     return ''
 
 player = Player(input(sltype("Hey there, how may I call you?\n")), [], {})
 
 # interface
-sltype("\nHey {name}, welcome to our little adventure.\nThroughout the game, you will be making decisions and the game will adapt accordingly.\nHere is an example:\n".format(name = player.name))
+sltype("\nHey {name}, welcome to our little adventure.\nThroughout the game, you will be making decisions and the game will adapt accordingly.\nHere is an example:\n".format(name = player.name.title()))
 time.sleep(1)
 # first user input test
 test = input("\nDogs or cats?\n")
@@ -35,7 +35,7 @@ dogs = "dogs"
 cats = "cats"
 if (dogs or dogs.upper() or dogs.title()) in test:
     sltype("""
-                                ..,,,,,,,,,..
+                            ..,,,,,,,,,..
                      .,;%%%%%%%%%%%%%%%%%%%%;,.
                    %%%%%%%%%%%%%%%%%%%%////%%%%%%, .,;%%;,
             .,;%/,%%%%%/////%%%%%%%%%%%%%%////%%%%,%%//%%%,
@@ -63,10 +63,9 @@ if (dogs or dogs.upper() or dogs.title()) in test:
  %%%%%%a%%@@@%@@@@@@@@@@@00000000000000@@@@@@@@@%@@%%@%%
 %%%aa%@@@@@@@@@@@@@@0000000000000000000000@@@@@@@@%@@@%%%%
 %%@@@@@@@@@@@@@@@00000000000000000000000000000@@@@@@@@@%%%%%
-
-                            WOOF!
-
-    """, 2500)
+""", 2500)
+    time.sleep(1)
+    sltype("\nWOOF!")
 elif (cats or cats.upper() or cats.title()) in test:
     print("""
     		M.					   .:M
